@@ -33,6 +33,5 @@ class ViewController: UIViewController {
 			print(error?.localizedDescription ?? "null error")
 		}.resume()
 	}
-	
-}
 
+}

@@ -202,6 +202,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 05408E162048535B009D6DBB /* Build configuration list for PBXNativeTarget "GitPage" */;
 			buildPhases = (
+				05995AEF20581D970091F9BF /* Lint */,
 				EDDE25D8B8BD867171ECFBE3 /* [CP] Check Pods Manifest.lock */,
 				05408DEA2048535A009D6DBB /* Sources */,
 				05408DEB2048535A009D6DBB /* Frameworks */,
@@ -334,6 +335,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		05995AEF20581D970091F9BF /* Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Lint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
+		};
 		2CECD786BBD257953A1D56FA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -415,11 +430,15 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GitPageTests/Pods-GitPageTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
