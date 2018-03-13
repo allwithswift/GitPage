@@ -1,0 +1,25 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'GitPage' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for GitPage
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RxBlocking'
+
+  target 'GitPageTests' do
+    inherit! :search_paths
+    # Pods for testing
+    pod 'RxTests'
+  end
+
+  target 'GitPageUITests' do
+    inherit! :search_paths
+    # Pods for testing
+    pod 'RxTests'
+  end
+
+end
