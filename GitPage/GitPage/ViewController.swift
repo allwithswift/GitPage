@@ -21,10 +21,15 @@ class ViewController: UIViewController {
 	}
 
 	@IBAction func clickLogin(_ sender: Any) {
-		URLSession.shared.dataTask(with: URL(string: "https://github.com/login/oauth/authorize?client_id=0e9d37c65fbee1890a0e6eacad205148e3025dc7&redirect_uri=gitpage://authorize&scope=user repo&state=123456")!) { (data, response, error) in
+		var urlComps = URLComponents(string: "https://github.com/login/oauth/authorize")
+		let queryItems: [URLQueryItem] = [URLQueryItem.init(name: "client_id", value: "0e9d37c65fbee1890a0e6eacad205148e3025dc7"),
+																			URLQueryItem.init(name: "redirect_uri", value: "gitpage://authorize"),
+																			URLQueryItem.init(name: "scope", value: "user repo"),
+																			URLQueryItem.init(name: "state", value: "123456")]
+		urlComps?.queryItems = queryItems
+		URLSession.shared.dataTask(with: urlComps!.url!) { (data, response, error) in
 			print(#function)
-			print(data?.description ?? "null data")
-			print(response?.description ?? "null response")
+			print(String.init(data: data ?? Data(), encoding: .utf8) ?? "null data")
 			print(error?.localizedDescription ?? "null error")
 		}.resume()
 	}
