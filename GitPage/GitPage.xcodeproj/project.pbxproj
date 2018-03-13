@@ -14,6 +14,7 @@
 		05408DFC2048535A009D6DBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05408DFA2048535A009D6DBB /* LaunchScreen.storyboard */; };
 		05408E072048535A009D6DBB /* GitPageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05408E062048535A009D6DBB /* GitPageTests.swift */; };
 		05408E122048535B009D6DBB /* GitPageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05408E112048535B009D6DBB /* GitPageUITests.swift */; };
+		05CB278320580D940079445D /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CB278220580D940079445D /* AppModel.swift */; };
 		0A06F069D2E3C04BF34E973F /* Pods_GitPageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3C5E67538055066851F71E /* Pods_GitPageTests.framework */; };
 		753198FFE554FBF18D09A028 /* Pods_GitPageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF26F863818638A15395289 /* Pods_GitPageUITests.framework */; };
 		FECAE51CE93402A7FBD7AE6E /* Pods_GitPage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C02B25A9C6FFA311E5BA51B /* Pods_GitPage.framework */; };
@@ -50,6 +51,7 @@
 		05408E0D2048535B009D6DBB /* GitPageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitPageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		05408E112048535B009D6DBB /* GitPageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitPageUITests.swift; sourceTree = "<group>"; };
 		05408E132048535B009D6DBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05CB278220580D940079445D /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		0C02B25A9C6FFA311E5BA51B /* Pods_GitPage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitPage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		136DF37B4E122452A1FBADD0 /* Pods-GitPageUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitPageUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitPageUITests/Pods-GitPageUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		186FF4C2935AB628AEB93B09 /* Pods-GitPageUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitPageUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitPageUITests/Pods-GitPageUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -114,7 +116,9 @@
 		05408DF02048535A009D6DBB /* GitPage */ = {
 			isa = PBXGroup;
 			children = (
+				05CB278120580D390079445D /* GitHub */,
 				05408DF12048535A009D6DBB /* AppDelegate.swift */,
+				05CB278220580D940079445D /* AppModel.swift */,
 				05408DF32048535A009D6DBB /* ViewController.swift */,
 				05408DF52048535A009D6DBB /* Main.storyboard */,
 				05408DF82048535A009D6DBB /* Assets.xcassets */,
@@ -140,6 +144,13 @@
 				05408E132048535B009D6DBB /* Info.plist */,
 			);
 			path = GitPageUITests;
+			sourceTree = "<group>";
+		};
+		05CB278120580D390079445D /* GitHub */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GitHub;
 			sourceTree = "<group>";
 		};
 		201FF1D5DA984876D2C5730D /* Frameworks */ = {
@@ -385,12 +396,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GitPageTests/Pods-GitPageTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/RxTests/RxTests.framework",
+				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTests.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -473,6 +484,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05408DF42048535A009D6DBB /* ViewController.swift in Sources */,
+				05CB278320580D940079445D /* AppModel.swift in Sources */,
 				05408DF22048535A009D6DBB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -671,7 +683,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 578DFE6744C85122C7F4DA74 /* Pods-GitPageTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HY47J4787Q;
@@ -689,7 +700,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1B307368D159EB3C079C4680 /* Pods-GitPageTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HY47J4787Q;
@@ -707,7 +717,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 136DF37B4E122452A1FBADD0 /* Pods-GitPageUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HY47J4787Q;
 				INFOPLIST_FILE = GitPageUITests/Info.plist;
@@ -724,7 +733,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 186FF4C2935AB628AEB93B09 /* Pods-GitPageUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HY47J4787Q;
 				INFOPLIST_FILE = GitPageUITests/Info.plist;
